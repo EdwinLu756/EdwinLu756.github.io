@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    max-width: 100%;  
+    max-width: 100%;  /* Ensures nothing exceeds the screen width */
 }
 
 
@@ -17,7 +17,7 @@ body {
     background-repeat: no-repeat;
     padding-top: 250px;
     padding-bottom: 400px;
-    opacity: 0;  
+    opacity: 0;  /* Initially invisible */
     animation: fadeIn 0.5s ease-in forwards;
 }
 
@@ -25,7 +25,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 750px;
+    width: 650px;
   }
 
 @keyframes fadeIn {
@@ -103,7 +103,7 @@ pTeam{
     padding-left: 8%;
     display: inline-block;
     width: 100%;
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 20px;
     text-align: left;
     font-family: "Times New Roman", Times, serif;
@@ -114,7 +114,6 @@ pTeam2{
     display: inline-block;
     width: 100%;
     font-size: 20px;
-    margin-bottom: 20px;
     text-align: left;
     font-family: "Times New Roman", Times, serif;
 }
@@ -124,10 +123,20 @@ pTeamLarge{
     padding-left: 5%;
     display: inline-block;
     width: 100%;
-    font-size: 25px;
+    font-size: 30px;
     text-align: left;
     font-family: "Times New Roman", Times, serif;
     color: rgb(0, 0, 130)
+}
+
+.teamMember h2 {
+    text-align: left;
+    padding-left: 4%;
+}
+
+.teamMember h4 {
+    text-align: left;
+    padding-left: 4%;
 }
 
 .myDiv{
@@ -137,14 +146,56 @@ pTeamLarge{
     margin-top: 40px;
     background-color: rgb(215, 245, 255);
     text-align: center;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .teamDiv{
     padding-top: 50px;
     
 }
+
+.teamMember {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 40px; /* space between photo and text */
+    padding: 20px;
+}
+
+.teamMember img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-left: 10px;
+    object-fit: cover;
+    align-self: center;
+}
+
+.teamInfo {
+    flex: 1; /* allows the text to take up remaining space */
+    text-align: left;
+}
+
+.teamPhoto {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers name & role under photo */
+    text-align: center;
+}
+
+.teamPhoto h2 {
+    padding-top: 10px;
+    font-size: 30px;
+    color: navy;
+}
+
+.teamPhoto h4 {
+    font-size: 20px;
+}
+  
 
 .contactDiv{
     padding-top: 5px;
@@ -204,4 +255,40 @@ pTeamLarge{
 .google-map iframe {
     width: 500px;
     height: 300px;
+}
+
+@media screen and (max-width: 600px) {
+    .teamMember {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0px;
+    }
+
+    .teamMember img {
+        margin-bottom: 20px;
+    }
+
+    .teamMember h2 {
+        margin-top: 0;
+        text-align: center;
+        padding-left: 0;
+    }
+    
+    .teamMember h4 {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .teamMember img {
+        margin: 0;
+        width: 250px;
+        
+    }
+     pTeamLarge{
+        font-size: 24px;
+     }
+     pTeam{
+        font-size: 18px;
+     }
 }
